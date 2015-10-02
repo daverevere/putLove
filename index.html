@@ -126,25 +126,25 @@
         <div class="row row-padding">
           
            <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
-               <div class="image-border">
-                  <label "image-border" for="stars">Stars<img ng-class="{'image-border': active}" ng-click="activeButton(); setTheme('theme1')"src="thumbnail1.png" id="stars">{{image-border:active}}
+               <div ng-class="{'image-border': active}">
+                  <img ng-click="activeButton(); setTheme('theme1')"src="thumbnail1.png" id="stars">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme1" ng-model = "theme" value="theme1"> -->
-                  </label>
+                  
                 </div>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
-                <div>
-                  <label for="sky">Sky<img ng-class="image-border" ng-click="setTheme('theme2')"src="thumbnail2.png" id="sky">
+                <div ng-class="{'image-border': active}">
+                  <img ng-click="activeButton(); setTheme('theme2')"src="thumbnail2.png" id="sky">
                     <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme2" ng-model = "theme" value="theme2">     -->
-                  </label>
+                  
                 </div>
             </div>
 
             <div class="col-xs-3 col-sm-3 col-md-3">
-                <div>
-                  <label for="floral">Floral<img ng-class="image-border" ng-click="setTheme('theme3')"src="thumbnail3.png" id="floral">
+                <div ng-class="{'image-border': active}">
+                  <img ng-click="activeButton(); setTheme('theme3')"src="thumbnail3.png" id="floral">
                     <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme3" ng-model = "theme" value="theme3">     -->
-                  </label>
+                  
                 </div>
             </div>
           
@@ -155,25 +155,24 @@
         <div class="row row-padding">
           <form>
           <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
-             <div>
-                <label class "image-border" for="parchment">Parchment<img ng-class="image-border" ng-click="setTheme('theme4')"src="thumbnail4.png" id="parchment">
+             <div ng-class="{'image-border': active}">
+                <img ng-click="activeButton(); setTheme('theme4')"src="thumbnail4.png" id="parchment">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme5" ng-model = "theme" value="theme5">     -->
-                </label>
-              </div>
+                </div>
           </div>
 
           <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
-              <div class "image-border">
-                <label class "image-border" for="city">City<img ng-class="image-border" ng-click="setTheme('theme5')"src="thumbnail5.png" id="city">
+              <div ng-class="{'image-border': active}">
+                <img ng-click="activeButton(); setTheme('theme5')"src="thumbnail5.png" id="city">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme6" ng-model = "theme" value="theme6">     -->
-                </label>
+                
               </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class "image-border">
-                <label class "image-border" for="pixels">Pixels<img ng-class="image-border" ng-click="setTheme('theme6')"src="thumbnail6.png" id="pixels">
+              <div ng-class="{'image-border': active}" class "image-border">
+                  <img ng-click="activeButton(); setTheme('theme6')"src="thumbnail6.png" id="pixels">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme7" ng-model = "theme" value="theme7">     -->
-                </label>
+                
               </div>
           </div>
           </form>
@@ -182,26 +181,26 @@
         <div class="row row-padding">
           <form>          
           <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
-             <div>
-                <label for="celebrate">Celebrate<img ng-class= "image-border" ng-click="setTheme('theme7')"src="thumbnail7.png" id="celebrate">
+             <div ng-class="{'image-border': active}">
+                 <img ng-click="activeButton(); setTheme('theme7')"src="thumbnail7.png" id="celebrate">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme5" ng-model = "theme" value="theme5">     -->
-                </label>
+                
               </div>
           </div>
 
           <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
-              <div>
-                <label for="vintage">Vintage<img ng-class= "image-border" ng-click="setTheme('theme8')"src="thumbnail8.png" id="vintage">
+              <div ng-class="{'image-border': active}">
+                  <img ng-click="activeButton(); setTheme('theme8')"src="thumbnail8.png" id="vintage">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme6" ng-model = "theme" value="theme6">     -->
-                </label>
+                
               </div>
           </div>
 
           <div class="col-xs-3 col-sm-3 col-md-3">
-              <div>
-                <label for="stars">Stars<img ng-class= "image-border" ng-click="setTheme('theme1')"src="thumbnail1.png" id="stars">
+              <div ng-class="{'image-border': active}">
+                  <img ng-click="activeButton(); setTheme('theme1')"src="thumbnail1.png" id="stars">
                   <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme7" ng-model = "theme" value="theme7" >     -->
-                </label>
+                
               </div>
           </div>
           </form>
@@ -282,7 +281,7 @@
             <div class="col-md-2 col-md-offset-5">
               <div class="form-group">
                 <label for="commentName"><br></label><br>
-                    <input ng-model="commentName" class="form-control" placeholder="Name" id="commentName">
+                    <input ng-model="commentName" class="form-control comment-name" placeholder="Name" id="commentName">
               </div>
             </div>
           </div>        

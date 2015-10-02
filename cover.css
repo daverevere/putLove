@@ -8,8 +8,43 @@
 
 .image-border {
 
+padding-bottom:10px;
+
+}
+.image-border:hover {
+
 border: 2px solid blue !important;
 cursor:pointer !important;
+width: 150px;
+height: 150px;
+padding-bottom:10px;
+
+}
+
+.image-border:after {
+
+border: 2px solid blue !important;
+cursor:pointer !important;
+width: 150px;
+height: 150px;
+padding-bottom:10px;
+
+}
+
+
+.image-border img {
+
+width: 145px;
+padding-bottom:10px;
+
+}
+
+.image-border.img:hover {
+
+width: 140px;
+z-index: 1;
+padding-bottom:10px;
+
 }
 
 .search-Button{
@@ -78,7 +113,7 @@ text-decoration:none;
 }
 
 .pulse {
-   animation-delay: 4s infinite linear;
+   animation-delay: 4s;
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
  
@@ -119,15 +154,19 @@ text-shadow: none !important;
 
 .row-padding {
 
+padding: 0;
 padding-left: 55px;
 padding-right: 0px;
+padding-bottom:5px;
+
 
 }
 
 .col-margin {
-margin-right: 20px;
+margin-right: 23px;
 
 }
+
 
 .label-class{
 margin-bottom: 0;
@@ -158,8 +197,9 @@ body {
 .theme1{
 position: relative;
 padding: 20px;
+display:inline-block;
 background-image: url("background1.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 font-size: 30px;
@@ -196,7 +236,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background2.png");
-background-size: cover;
+background-size: inherit;
 width: 100%;
 height: 100%;
 color:white;
@@ -239,7 +279,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background3.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 font-family: 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
@@ -277,7 +317,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background4.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 font-family: Papyrus, fantasy;
@@ -315,7 +355,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background5.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal;
@@ -351,7 +391,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background6.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 font-style: helvetica;
@@ -388,7 +428,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background9.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 color:white;
@@ -420,7 +460,7 @@ position: relative;
 display: inline-block;
 padding: 20px;
 background-image: url("background8.jpg");
-background-size: cover;
+background-size: length;
 width: 100%;
 height: 100%;
 font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
@@ -762,17 +802,30 @@ width: 50px;
 
 }
 
+col {
+  display:block;
+}
 .put-love {
 
     border-radius: 10px;
 
-    margin-right: 100px;
+    margin-right: 155px;
+}
+.comment-name {
+
+  width: 150px;
 }
 
 .theme-container {
 
 display: block;  
 }
+
+.bubble {
+  width: 500px;
+}
+.theme1 {
+  background-size: auto;
 
 }
 

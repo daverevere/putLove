@@ -5,10 +5,10 @@ app.controller("mainController", ["$scope", "$localStorage", function($scope, $l
 // $localStorage.$reset();
 
 
-	// $scope.active = false;
- //  $scope.activeButton = function() {
- //    $scope.active = !$scope.active;
- //  }  
+	$scope.active = false;
+  $scope.activeButton = function() {
+    $scope.active = !$scope.active;
+  }  
 	
 $scope.setTheme = function(str){
 	$scope.theme = str
