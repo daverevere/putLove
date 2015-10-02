@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+
+    <title>Put love here</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="cover.css" rel="stylesheet">
+  </head>
+<!-- submit img with input box -->
+<!-- <img ng-src="{{inputImg}}">
+<input ng-model="someOther"> <button ng-click="inputImg = someOther"></button> -->
+
+<body ng-Controller = "mainController" ng-cloak>
+
+    <nav class="navbar navbar-default navbar-fixed-top button">
+    
+      <ul class="nav navbar-nav button">  
+       
+            <select class="btn-default dropdown-toggle main-font" value="Sort" ng-model="selectedRelation">
+            <option value="" selected="selected">Sort love</option>
+            <option ng-repeat="currentRelation in relationsArray" class="dropdown-font" value="{{currentRelation}}">{{currentRelation}}</option>
+            </select>
+           
+      </ul>
+
+
+   
+
+
+    <a href="#" class ="btn btn-lg button-image navbar-center animated pulse main-font" data-toggle="modal" data-target="#myModal">Put love here</a>
+      
+
+<div id ="myModal" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+  
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                 <label class ="form-font" for="userName" ng-dblclick="reset()"> Who are you?<br></label><br>
+              </div>
+            </div>
+          </div>
+           <div class="row">  
+              <div class ="col-md-3 col-md-offset-2">
+                    <input ng-model = "userName" class="form-control" placeholder="First name" id="userName" required>
+              </div>
+              <form required>
+                
+            <div class="col-md-6 gender-select">
+              <div class="radio">
+                <label for="optionsRadios1">female
+                  <input class="radio-position" type="radio" name="optionsRadios" id="optionsRadios1" ng-model = "gender" value="her">
+                </label>
+              </div>
+
+              <div class="radio">
+                <label for="optionsRadios2">male
+                  <input class="radio-position" type="radio" name="optionsRadios" id="optionsRadios2" ng-model = "gender" value="his">    
+                </label>
+              </div>
+
+               <div class="radio">
+                <label for="optionsRadios2">other
+                  <input class="radio-position" type="radio" name="optionsRadios" id="optionsRadios2" ng-model = "gender" value="their">    
+                </label>
+              </div>
+              </div>
+              </form>
+
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                 <label class ="form-font relation-title form-font" for="person">Who are you thinking about?<br></label><br>
+              </div>
+            </div>
+          </div>
+           
+
+           <div class="row">  
+              <div class ="col-md-3 col-md-offset-2 relation-input">
+                    <input ng-model = "person" class="form-control" placeholder="First name" id="person" type="text" required>
+              </div>
+          
+
+           <div class="col-md-5 relation-select">
+            <br>
+            <select class="btn-default dropdown-toggle" ng-model="relation" required>
+            <option value="" selected>relation to you</option>
+            <option ng-repeat="currentRelation in relationsArray" value="{{currentRelation}}">{{currentRelation}}</option>
+            </select>
+          </div>
+          </div>
+
+        <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class ="form-font textAreaTitle" for="comment">Why are you grateful for them?</label>
+                  <textarea required ng-model = "quote" class="form-control" rows="5" id="comment" required></textarea>
+              </div>
+          </div>
+        </div>
+        
+        <label class ="form-font textAreaTitle" for="comment">Choose a theme</label>
+        <div class ="theme-container">
+        <div class="row row-padding">
+          
+           <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
+               <div class="image-border">
+                  <label "image-border" for="stars">Stars<img ng-class="{'image-border': active}" ng-click="activeButton(); setTheme('theme1')"src="thumbnail1.png" id="stars">{{image-border:active}}
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme1" ng-model = "theme" value="theme1"> -->
+                  </label>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
+                <div>
+                  <label for="sky">Sky<img ng-class="image-border" ng-click="setTheme('theme2')"src="thumbnail2.png" id="sky">
+                    <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme2" ng-model = "theme" value="theme2">     -->
+                  </label>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3">
+                <div>
+                  <label for="floral">Floral<img ng-class="image-border" ng-click="setTheme('theme3')"src="thumbnail3.png" id="floral">
+                    <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme3" ng-model = "theme" value="theme3">     -->
+                  </label>
+                </div>
+            </div>
+          
+        </div>
+
+      
+
+        <div class="row row-padding">
+          <form>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
+             <div>
+                <label class "image-border" for="parchment">Parchment<img ng-class="image-border" ng-click="setTheme('theme4')"src="thumbnail4.png" id="parchment">
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme5" ng-model = "theme" value="theme5">     -->
+                </label>
+              </div>
+          </div>
+
+          <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
+              <div class "image-border">
+                <label class "image-border" for="city">City<img ng-class="image-border" ng-click="setTheme('theme5')"src="thumbnail5.png" id="city">
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme6" ng-model = "theme" value="theme6">     -->
+                </label>
+              </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class "image-border">
+                <label class "image-border" for="pixels">Pixels<img ng-class="image-border" ng-click="setTheme('theme6')"src="thumbnail6.png" id="pixels">
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme7" ng-model = "theme" value="theme7">     -->
+                </label>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <div class="row row-padding">
+          <form>          
+          <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
+             <div>
+                <label for="celebrate">Celebrate<img ng-class= "image-border" ng-click="setTheme('theme7')"src="thumbnail7.png" id="celebrate">
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme5" ng-model = "theme" value="theme5">     -->
+                </label>
+              </div>
+          </div>
+
+          <div class="col-xs-3 col-sm-3 col-md-3 col-margin">
+              <div>
+                <label for="vintage">Vintage<img ng-class= "image-border" ng-click="setTheme('theme8')"src="thumbnail8.png" id="vintage">
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme6" ng-model = "theme" value="theme6">     -->
+                </label>
+              </div>
+          </div>
+
+          <div class="col-xs-3 col-sm-3 col-md-3">
+              <div>
+                <label for="stars">Stars<img ng-class= "image-border" ng-click="setTheme('theme1')"src="thumbnail1.png" id="stars">
+                  <!-- <input class="radio-position" type="radio" name="optionsRadios" id="theme7" ng-model = "theme" value="theme7" >     -->
+                </label>
+              </div>
+          </div>
+          </form>
+        </div>
+
+        </div>
+     
+              <div class="modal-footer">        
+                <button type = "submit" class=" put-love btn btn-lg btn-default" navbar-center" "data-toggle="modal" data-dismiss="modal" ng-click="submitButton()">Submit</button>
+              </div>
+        </div> <!-- container -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      <form class="navbar-form navbar-right" role="search" >
+        <div class="form-group">
+
+          <input type="text" class="form-control">
+        
+        
+        </div>
+        <button type="submit" class="button submit main-font search-Button">Search</button>
+      </form>
+
+      
+    <br><br>
+  </nav><!-- /.navbar-collapse -->
+<!-- /.container-fluid -->
+</div>
+
+
+  
+
+<div ng-mouseover = "setCardIndex($index)" ng-repeat = "index in userCard | filter: selectedRelation " ng-class="index.theme"><br><br><br><br><br><br>
+      
+        <h3>{{index.userName}}</h3><p>&nbsp;is thinking about {{index.gender}} {{index.relation}},&nbsp;</p><h3>{{index.person}}...</h3><br>
+     <!--    <p>{{index.userName}} said...</p> -->
+        
+
+    <div class = "bubble"> <span>"{{index.quote}}"</span>
+    </div>
+
+  <!-- a ng-click = "commentReveal()" class="comments">Comments</a> <a class="share">Share</a> -->
+    
+        <a class="comments main-font" data-toggle="modal" data-target=".comment-modal{{$index}}">Comments</a><a class="share main-font" ng-click="shareClick()">Share</a><br><br>
+      
+        <div ng-hide="hideShare" class="share">
+          <p>hello</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><span class='st_facebook' displayText='Facebook'></span>
+          <span class='st_twitter' displayText='Tweet'></span>
+          <span class='st_email' displayText='Email'></span>
+        </div>
+
+<div class="modal fade comment-modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  
+  <div class="modal-dialog modal-lg">
+    
+    <div class="modal-content">
+        
+        <div ng-repeat = "someComment in index.commentArray" class = "row">
+          <div class = "col-xs-12 col-sm-12 col-md-12"><br>
+            <h4 class= "comment-header">{{someComment.commentName}} said...</h4>
+            <p class="comment-body">"{{someComment.theComment}}"</p><br>
+            <p class="comment-time">{{someComment.commentTime | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+
+
+          </div>
+
+        </div>         
+
+          <div class="row">
+            <div class="col-md-2 col-md-offset-5">
+              <div class="form-group">
+                <label for="commentName"><br></label><br>
+                    <input ng-model="commentName" class="form-control" placeholder="Name" id="commentName">
+              </div>
+            </div>
+          </div>        
+
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <label for="comment"></label>
+                  <textarea ng-model="theComment" class="comment-box form-control" placeholder="Comment" rows="5" id="comment"></textarea>
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9 col-md-offset-3">
+          <a href="#" class="put-love btn btn-lg btn-default" navbar-center" "data-toggle="modal" ng-click="commentSubmit($index, commentName, theComment)">Submit</a><br><br>
+          <!-- pass in the $index here so you know which card it is, scope.usercard.comment.push -->
+          </div>
+        </div>
+    
+   </div>
+
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <!--     <div ng-hide = "commentBox" class ="container"> -->
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+    
+</div>
+
+       
+      </div>
+    </div>
+
+   
+    <nav class="navbar navbar-default navbar-fixed-bottom button">
+    <a class="fa fa-caret-up page-scroll" ng-click="scrollUp()"></a>
+    
+    <a class="fa fa-caret-down page-scroll" ng-click="scrollDown()"></a>  
+    </nav>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.2/angular-scroll.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.9/ngStorage.js"></script>
+    <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
+    <script src="angular.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 
+  </body>
+</html>
